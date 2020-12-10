@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => ({
 
 		"& svg" : {
 			fontSize : "1.7em",
+			color    : "white",
 		},
 	},
 }));

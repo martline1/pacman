@@ -30,7 +30,9 @@ const ChartView = () => {
 					<h2>Algoritmo de Dijkstra</h2>
 				</div>
 
-				<p className="algDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio consectetur quibusdam id error animi, sit vero illum reprehenderit nobis! Libero a expedita voluptas, illum perspiciatis molestias porro mollitia! Amet eaque nemo facere similique eos est, eligendi corrupti sed cum dolorum! Atque ex quos sequi, esse vel obcaecati officia molestias hic!</p>
+				<p className="algDescription">
+					El algoritmo de Dijkstra, también llamado algoritmo de caminos mínimos, es un algoritmo para la determinación del camino más corto, dado un vértice origen, hacia el resto de los vértices en un grafo que tiene pesos en cada arista. Su nombre alude a Edsger Dijkstra, científico de la computación de los Países Bajos que lo concibió en 1956 y lo publicó por primera vez en 1959.
+				</p>
 			</div>
 
 			<div className="card">
@@ -38,33 +40,6 @@ const ChartView = () => {
 				<div className="graph">
 					<div className="imageContainer">
 						<img src={GrafoImg} alt="Grafo" />
-					</div>
-
-					<div className="tableContainer">
-						<table>
-							<tbody>
-								<tr>
-									<th>Vértice</th>
-									<th>Min. Distancia a A</th>
-									<th>Vértice Previo</th>
-								</tr>
-								<tr>
-									<td>a</td>
-									<td>a</td>
-									<td>a</td>
-								</tr>
-								<tr>
-									<td>a</td>
-									<td>a</td>
-									<td>a</td>
-								</tr>
-								<tr>
-									<td>a</td>
-									<td>a</td>
-									<td>a</td>
-								</tr>
-							</tbody>
-						</table>
 					</div>
 				</div>
 			</div>

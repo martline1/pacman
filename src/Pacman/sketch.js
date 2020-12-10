@@ -19,6 +19,59 @@ function onClick(evnt) {
 	console.log({ pos });
 }
 
+const directions = {
+	up    : "up",
+	left  : "left",
+	right : "right",
+	down  : "down",
+};
+
+let direction = directions.up;
+
+function onKeydown({ key }) {
+	switch(key) {
+		case "ArrowLeft":
+			direction = directions.left;
+			return;
+		case "ArrowDown":
+			direction = directions.down;
+			return;
+		case "ArrowRight":
+			direction = directions.right;
+			return;
+		case "ArrowUp":
+			direction = directions.up;
+		default:
+			return;
+	}
+}
+
+class Player {
+	constructor() {
+		console.log("Se llamó el constructor");
+
+		this.texture = resources.spritesTileMap;
+
+		this.currentRectangle = new PIXI.Rectangle(0, 0, 32, 32);
+
+		this.texture.frame = this.currentRectangle;
+
+		console.log(this.texture);
+
+		this.body = new PIXI.Sprite(this.texture);
+
+		// this.body.anchor.set(0.5);
+		// this.body.position.set(app.view.width / 2, app.view.height / 2);
+		// this.body.scale.set(1.4);
+	}
+
+	update() {
+		
+	}
+}
+
+let pacman;
+
 export function setup(_app) {
 	app = _app;
 
@@ -28,7 +81,7 @@ export function setup(_app) {
 		.add("dots", "./assets/dots.png")
 		.add("map", "./assets/map.png")
 		.add("ready", "./assets/ready.png")
-		.add("spritesTileMap", "./assets/cat_idle.png")
+		.add("spritesTileMap", "./assets/sprites32.png")
 		.load((loader, _resources) => resources = _resources);
 
 	loader.onComplete.add(() => {
@@ -46,38 +99,17 @@ export function setup(_app) {
 
 		app.stage.addChild(map);
 		app.stage.addChild(ready);
-
-		// Dots
-		const dotsTexture = resources.dots.texture;
-
-		const rect = new PIXI.Rectangle(0, 0, 16, 16);
-
-		dotsTexture.frame = rect;
-
-		const positions = [];
-
-		for (let i = 0; i < 12; i++) {
-			let dot = new PIXI.Sprite(dotsTexture);
-
-			dot.scale.set(1.4);
-			
-			dot.position.set(233 + (23 * i), 514);
-
-			app.stage.addChild(dot);
-		}
 		
-		for (let i = 0; i < 19; i++) {
-			let dot = new PIXI.Sprite(dotsTexture);
-	
-			dot.scale.set(1.4);
-			dot.position.set(348, 514 - (23.6 * i));
-	
-			app.stage.addChild(dot);
-		}
-		
-		app.ticker.add(draw);
-
 		app.view.addEventListener("click", onClick);
+		window.addEventListener("keydown", onKeydown);
+
+		ready.visible = false;
+
+		pacman = new Player();
+
+		app.ticker.add(draw);
+		// setTimeout(() => {
+		// }, 3000);
 	});
 };
 
@@ -88,4 +120,5 @@ export function clean() {
 	app.ticker.remove(draw);
 
 	app.view.removeEventListener("click", onClick);
+	window.removeEventListener("keydown", onKeydown);
 };
