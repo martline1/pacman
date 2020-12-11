@@ -1,4 +1,4 @@
-# Mate Grafos Electron
+# Pacman
 
 Este proyecto está enfocado a presentar visualmente y como aplicación de escritorio, el recorrido que tendría un personaje a través de un mapa representado como un grafo, usando el **Algoritmo de Dijkstra**
 
