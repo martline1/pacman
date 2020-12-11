@@ -6,6 +6,6 @@ Fue realizado como proyecto para la materia de **Matemática discreta y estadís
 
 ### ¿Cómo ejecutar el programa?
 
-1-. Clonar el repositorio
-2-. Instalar dependencias con `npm i`
-3-. Correr el comando `npm run dev`
+1. Clonar el repositorio
+2. Instalar dependencias con `npm i`
+3. Correr el comando `npm run dev`
