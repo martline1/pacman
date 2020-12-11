@@ -53,7 +53,7 @@ const AppLayout = ({ children }) => {
 				</div>
 
 				<div className="socialMediaContainer">
-					<IconButton onClick={() => shell.openExternal("https://github.com/martline1")}>
+					<IconButton onClick={() => shell.openExternal("https://github.com/martline1/pacman")}>
 						<img src={GithubIcon} alt="Github" />
 					</IconButton>
 					<IconButton onClick={() => shell.openExternal("https://twitter.com/martline2")}>
