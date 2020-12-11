@@ -2,6 +2,6 @@ import { createMemoryHistory } from "history";
 
 const history = createMemoryHistory();
 
-history.push("/pacman");
+history.push("/");
 
 export default history;
