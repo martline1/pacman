@@ -56,14 +56,14 @@ export function setup(_app) {
 
 		app.view.addEventListener("click", mappedOnClick);
 
-		ready.visible = false;
+		setTimeout(() => {
+			ready.visible = false;
 
-		pacman = new Player(app, resources.player.texture);
-		ghost  = new Ghost(app, resources.ghost.texture);
+			pacman = new Player(app, resources.player.texture);
+			ghost  = new Ghost(app, resources.ghost.texture);
 
-		app.ticker.add(draw);
-		// setTimeout(() => {
-		// }, 3000);
+			app.ticker.add(draw);
+		}, 3000);
 
 		// Veil Right
 		// drawRect(324 + app.view.width / 2 + 45, -101 + app.view.height / 2 + 100.5, 90, 201, 0x5021D7);
